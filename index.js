@@ -159,6 +159,8 @@ inputbox.value = 15
 let choiceCheck = document.getElementById("char-check")
 choiceCheck.checked = true;
 
+let instruction = document.getElementById("copy") 
+
 function passwordGen() {
 	let inputbox = document.getElementById("len-input");
 	let passLength = inputbox.value - 1;
@@ -178,7 +180,11 @@ function passwordGen() {
 	return password;
 }
 
-function copyElementText(id) {
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function copyElementText(id) {
     let text = document.getElementById(id).innerText;
     let elem = document.createElement("textarea");
     document.body.appendChild(elem);
@@ -186,7 +192,9 @@ function copyElementText(id) {
     elem.select();
     document.execCommand("copy");
     document.body.removeChild(elem);
-	alert("Password copied to clipboard: " + text)
+	instruction.innerText = "password copied to clipboard 🔒✅"
+	await sleep(2000);
+	instruction.innerText = "click password to copy⬆️📋"
 }
 
 function showPasswords() {
