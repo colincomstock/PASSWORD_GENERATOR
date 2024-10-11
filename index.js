@@ -51,6 +51,61 @@ const characters = [
 	"x",
 	"y",
 	"z",
+];
+
+const charactersAndSymbols = [
+	"A",
+	"B",
+	"C",
+	"D",
+	"E",
+	"F",
+	"G",
+	"H",
+	"I",
+	"J",
+	"K",
+	"L",
+	"M",
+	"N",
+	"O",
+	"P",
+	"Q",
+	"R",
+	"S",
+	"T",
+	"U",
+	"V",
+	"W",
+	"X",
+	"Y",
+	"Z",
+	"a",
+	"b",
+	"c",
+	"d",
+	"e",
+	"f",
+	"g",
+	"h",
+	"i",
+	"j",
+	"k",
+	"l",
+	"m",
+	"n",
+	"o",
+	"p",
+	"q",
+	"r",
+	"s",
+	"t",
+	"u",
+	"v",
+	"w",
+	"x",
+	"y",
+	"z",
 	"0",
 	"1",
 	"2",
@@ -97,15 +152,26 @@ passButton.addEventListener("click", showPasswords);
 
 let passbox1 = document.getElementById("pass1");
 let passbox2 = document.getElementById("pass2");
+
 let inputbox = document.getElementById("len-input");
 inputbox.value = 15
+
+let choiceCheck = document.getElementById("char-check")
+choiceCheck.checked = true;
 
 function passwordGen() {
 	let inputbox = document.getElementById("len-input");
 	let passLength = inputbox.value - 1;
 	let password = "";
+	let item;
+	console.log(choiceCheck.checked)
 	for (let i = 0; i <= passLength; i++) {
-		let item = characters[Math.floor(Math.random() * characters.length)];
+		if (choiceCheck.checked) {
+			item = charactersAndSymbols[Math.floor(Math.random() * charactersAndSymbols.length)];
+		}
+		else {
+			item = characters[Math.floor(Math.random() * characters.length)];
+		}
 		password += item;
 	}
 
