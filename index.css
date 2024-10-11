@@ -1,8 +1,32 @@
 body {
-	background-color: #1e2a37;
-	font-family: Arial, Helvetica, sans-serif;
+	background: rgb(255,164,0);
+	background: linear-gradient(140deg, rgb(34, 34, 34) 0%, rgb(0, 0, 0) 100%);
+	font-family: "Karla", sans-serif;
 	padding-left: 30px;
 	color: white;
+}
+
+#app-box {
+	width: fit-content;
+	height:fit-content;
+	background-color: #1e2a37;
+	padding: 40px;
+	border-radius: 25px;
+	margin: 30vh auto;
+}
+
+h1 {
+	font-family: "Karla", sans-serif;
+	font-weight: 800;
+}
+
+p {
+	color: #c5c5c5;
+}
+
+#len-text{
+	margin-top: 30px;
+	margin-bottom: 10px;
 }
 
 #greenstyle {
@@ -12,35 +36,71 @@ body {
 	padding-bottom: 5px;
 }
 
-p {
-	padding-bottom: 30px;
-}
-
 button {
 	background-color: #0fb980;
 	border: none;
 	width: fit-content;
-	padding: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+
 	color: white;
 	border-radius: 5px;
+	transition: 0.5s;
+}
 
+input {
+	background-color: #cacaca8c;
+	border: none;
+	width: 100px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+	color: white;
+	border-radius: 5px;
+	transition: 0.5s;
+}
+
+button:hover {
+	background-color: #32dfa5;
+	
 }
 
 hr {
 	border-color: #273648;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	background-color: rgba(255, 255, 255, 0);
 }
 
 .passbox {
-	display: inline-flex;
-	margin: 0;
-	padding-left: 30px;
-	border-radius: 10px;
-	min-width: 200px;
-	max-width: 300px;
-	height:fit-content;
-	width: fit-content;
-	background-color: #273648;
-	text-align: center;
-	color: #0fb980;
+    display: inline-flex; /* Use inline-flex to keep divs side by side */
+    align-items: center; /* Vertically center the content */
+    justify-content: center; /* Horizontally center the content */
+    margin-right: 20px;
+    height: 40px; /* Set a consistent height */
+    border-radius: 10px;
+    background-color: #273648;
+    color: #28db9f;
+    padding: 0 10px; /* Horizontal padding */
+    line-height: 1; /* Set line-height to 1 to avoid any issues */
+	width: 250px;
+	transition: 1s;
+}
 
+.passbox p {
+	padding-left: 30px;
+	padding-right: 30px;
+	cursor: copy;
+}
+
+#copy {
+	text-align: center;
+}
+
+#signature {
+	text-align: right;
 }

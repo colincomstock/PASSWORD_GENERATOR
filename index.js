@@ -97,9 +97,12 @@ passButton.addEventListener("click", showPasswords);
 
 let passbox1 = document.getElementById("pass1");
 let passbox2 = document.getElementById("pass2");
+let inputbox = document.getElementById("len-input");
+inputbox.value = 15
 
 function passwordGen() {
-	let passLength = 15;
+	let inputbox = document.getElementById("len-input");
+	let passLength = inputbox.value - 1;
 	let password = "";
 	for (let i = 0; i <= passLength; i++) {
 		let item = characters[Math.floor(Math.random() * characters.length)];
@@ -107,6 +110,17 @@ function passwordGen() {
 	}
 
 	return password;
+}
+
+function copyElementText(id) {
+    let text = document.getElementById(id).innerText;
+    let elem = document.createElement("textarea");
+    document.body.appendChild(elem);
+    elem.value = text;
+    elem.select();
+    document.execCommand("copy");
+    document.body.removeChild(elem);
+	alert("Password copied to clipboard: " + text)
 }
 
 function showPasswords() {

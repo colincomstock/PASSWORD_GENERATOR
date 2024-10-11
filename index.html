@@ -1,21 +1,30 @@
 <html>
     <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
-        <h1>Generate a</h1>
-        <h1 id="greenstyle">random password</h1>
-        <p>Never use an insecure password again.</p>
-        <button id="pass-btn">Generate passwords</button>
-        <hr>
-        <div>
-            <div class="passbox">
-                <h4 id="pass1"></h4>
+        <div id="app-box">
+            <h1>Generate a</h1>
+            <h1 id="greenstyle">random password</h1>
+            <p>Never use an insecure password again.<br>Set your desired password length, and then click "Generate passwords".</p>
+            <p id="len-text">length</p>
+            <input type="number" name="password_length" id="len-input">
+            <button id="pass-btn">Generate passwords</button>
+            <hr>
+            <div>
+                <div class="passbox">
+                    <p id="pass1" onclick="copyElementText(this.id)"> </p>
+                </div>
+                <div class="passbox">
+                    <p id="pass2" onclick="copyElementText(this.id)"> </p>
+                </div>
             </div>
-            <div class="passbox">
-                <h4 id="pass2"></h4>
-            </div>
+            <p id="copy">click to copy</p>
+            <script src="index.js"></script>
         </div>
-        <script src="index.js"></script>
+        <p id="signature">portfolio project by colin comstock</p>
     </body>
 </html>
